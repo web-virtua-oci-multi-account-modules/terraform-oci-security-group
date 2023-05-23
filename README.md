@@ -30,7 +30,7 @@ provider "oci" {
 ## Features enable of Security Group configurations for this module:
 
 - Security Group
-- Security Group Rules
+- Security Group Rules 
 
 ## Usage exemples
 
