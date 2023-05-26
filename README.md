@@ -39,7 +39,7 @@ provider "oci" {
 
 ```hcl
 module "all_eggres_test" {
-  source = "web-virtua-oci-multi-account-modules/security-list/oci"
+  source = "web-virtua-oci-multi-account-modules/security-group/oci"
 
   compartment_id = var.compartment_id
   name           = "tf-security-group-all-eggress"
@@ -65,7 +65,7 @@ module "all_eggres_test" {
 
 ```hcl
 module "security_group" {
-  source = "web-virtua-oci-multi-account-modules/security-list/oci"
+  source = "web-virtua-oci-multi-account-modules/security-group/oci"
 
   compartment_id = var.network_dev_compartment_id
   name           = "tf-security-group"
