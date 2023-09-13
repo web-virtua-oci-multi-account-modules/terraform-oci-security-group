@@ -1,7 +1,7 @@
 locals {
   list_less_cidr_blocks = flatten([
     for item in var.allow_rules_group != null ? var.allow_rules_group : [] : [{
-      protocol                  = var.protocols[item.protocol]
+      protocol                  = var.protocols != null ? var.protocols[item.protocol] : var.default_protocols[item.protocol]
       sg_type                   = item.sg_type != null ? item.sg_type : var.type
       cidr_blocks               = item.cidr_blocks != null ? item.cidr_blocks : var.allow_cidr_blocks
       source_type               = item.source_type

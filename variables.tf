@@ -79,6 +79,12 @@ variable "allow_rules_group" {
 
 variable "protocols" {
   description = "Available protocols, can be used the default protocols or customize, the values by default are all, icmp, ipv4, tcp, udp, ipv6 and icmpv6. Doc: others protocols http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
+  type = map(any)
+  default = null
+}
+
+variable "default_protocols" {
+  description = "Available protocols, can be used the default protocols or customize, the values by default are all, icmp, ipv4, tcp, udp, ipv6 and icmpv6. Doc: others protocols http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
   type = object({
     all    = string
     icmp   = number
@@ -87,6 +93,7 @@ variable "protocols" {
     udp    = number
     ipv6   = number
     icmpv6 = number
+    rdp    = number
   })
   default = {
     all    = "all"
@@ -96,5 +103,6 @@ variable "protocols" {
     udp    = 17
     ipv6   = 41
     icmpv6 = 58
+    rdp    = 27
   }
 }
